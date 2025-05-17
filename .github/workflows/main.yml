@@ -28,6 +28,6 @@ jobs:
       run: yarn dlx @railway/cli
 
     - name: Deploy to Railway
-      run: railway up
+      run: yarn dlx @railway/cli up
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
