@@ -1,0 +1,9 @@
+{
+  "name": "prompthub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo Hello world"
+  }
+}
