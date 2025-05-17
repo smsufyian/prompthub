@@ -27,9 +27,27 @@ This project uses git hooks to ensure code quality. The pre-push hook will run t
 ## Usage
 
 ```bash
-# Start the application
-yarn start
+# Start the application in development mode
+yarn start:dev
+
+# Start the application in production mode
+yarn start:prod
+
+# Build the application
+yarn build
 ```
+
+### API Endpoints
+
+The application provides the following RESTful API endpoints:
+
+#### Prompts
+
+- `GET /prompts` - Get all prompts
+- `GET /prompts/:id` - Get a specific prompt by ID
+- `POST /prompts` - Create a new prompt
+- `PUT /prompts/:id` - Update an existing prompt
+- `DELETE /prompts/:id` - Delete a prompt
 
 ## Features
 
