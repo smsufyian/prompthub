@@ -17,7 +17,12 @@ cd prompthub
 
 # Install dependencies
 yarn install
+
+# Make git hooks executable (if they're not already)
+chmod +x .husky/pre-push
 ```
+
+This project uses git hooks to ensure code quality. The pre-push hook will run tests before allowing a push to the remote repository. If tests fail, the push will be aborted.
 
 ## Usage
 
