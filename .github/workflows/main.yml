@@ -27,7 +27,8 @@ jobs:
     - name: Install Railway CLI
       run: yarn dlx @railway/cli
 
+    - name: Echo token
+      run: echo {{ secrets.RAILWAY_TOKEN }}
+
     - name: Deploy to Railway
-      run: yarn dlx @railway/cli up
-      env:
-        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      run: yarn dlx @railway/cli up --token="dafcda69-e2a0-4acc-ae6c-c515a658f85b"
