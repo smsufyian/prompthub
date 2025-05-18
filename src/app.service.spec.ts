@@ -21,7 +21,7 @@ describe('AppService', () => {
   });
 
   // This test is intentionally failing to verify the pre-push hook
-  it('intentionally failing test to verify pre-push hook', () => {
+  it('intentionally failing test to verify pre-push hook (updated)', () => {
     expect(true).toBe(false);
   });
 });
