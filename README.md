@@ -1,10 +1,41 @@
 # PromptHub
 
-A hub for managing and sharing prompts for AI and automation workflows.
+Platform for developing and managing AI applications for the enterprises.
 
 ## Description
 
 PromptHub is a platform designed to help users create, organize, and share prompts for various AI models and automation tools.
+
+## Dependencies
+
+### Installing Node.js through NVM (Node Version Manager)
+
+```bash
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# OR using wget
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Reload shell configuration
+source ~/.bashrc  # or source ~/.zshrc for Zsh users
+
+# Install the latest version of Node.js
+nvm install node
+
+# Use the installed latest version
+nvm use node
+```
+
+### Installing Yarn version 4
+
+```bash
+# Make sure you have Node.js installed first
+# Install Yarn globally using npm
+npm install -g yarn
+
+# Enable Yarn Berry (version 4)
+yarn set version 4.9.1
+```
 
 ## Installation
 
@@ -22,9 +53,7 @@ yarn install
 chmod +x .husky/pre-push
 ```
 
-This project uses git hooks to ensure code quality. The pre-push hook will run tests before allowing a push to the remote repository. If tests fail, the push will be aborted.
-
-## Usage
+## Running the project locally
 
 ```bash
 # Start the application in development mode
@@ -37,29 +66,18 @@ yarn start:prod
 yarn build
 ```
 
-### API Endpoints
+## Running tests
 
-The application provides the following RESTful API endpoints:
+```bash
+# Run all tests
+yarn test
 
-#### Prompts
+# Run tests in watch mode
+yarn test:watch
 
-- `GET /prompts` - Get all prompts
-- `GET /prompts/:id` - Get a specific prompt by ID
-- `POST /prompts` - Create a new prompt
-- `PUT /prompts/:id` - Update an existing prompt
-- `DELETE /prompts/:id` - Delete a prompt
+# Run tests with coverage
+yarn test:cov
 
-## Features
-
-- Create and manage prompts
-- Organize prompts by categories
-- Share prompts with others
-- Import and export prompt collections
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+# Run end-to-end tests
+yarn test:e2e
+```
