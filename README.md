@@ -66,6 +66,39 @@ yarn start:prod
 yarn build
 ```
 
+## API Documentation
+
+The project uses Swagger for API documentation. After starting the application, you can access the Swagger UI at:
+
+```
+http://localhost:3000/api
+```
+
+This provides an interactive interface to:
+- Explore available API endpoints
+- View request/response schemas
+- Test API endpoints directly from the browser
+
+### Adding Documentation to New Endpoints
+
+When creating new endpoints, use Swagger decorators to document them:
+
+```typescript
+import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+
+@ApiTags('category')
+@Controller('example')
+export class ExampleController {
+
+  @Get()
+  @ApiOperation({ summary: 'Description of what the endpoint does' })
+  @ApiResponse({ status: 200, description: 'Success response description' })
+  exampleEndpoint() {
+    // Implementation
+  }
+}
+```
+
 ## Running tests
 
 ```bash
