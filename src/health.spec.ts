@@ -1,7 +1,7 @@
 import {Test, TestingModule} from '@nestjs/testing';
 import {INestApplication} from '@nestjs/common';
 import {AppModule} from './app.module';
-import request from 'supertest';
+import * as request from 'supertest';
 
 describe('Health liveliness check', () => {
     let app: INestApplication;
