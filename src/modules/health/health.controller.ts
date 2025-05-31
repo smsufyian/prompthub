@@ -10,8 +10,8 @@ export class HealthController {
   @Get('live')
   @HealthCheck()
   @ApiOperation({ summary: 'Check if the application is running' })
-  @ApiResponse({ 
-    status: 200, 
+  @ApiResponse({
+    status: 200,
     description: 'The application is healthy',
     schema: {
       type: 'object',
@@ -19,9 +19,9 @@ export class HealthController {
         status: { type: 'string', example: 'ok' },
         info: { type: 'object', example: {} },
         error: { type: 'object', example: {} },
-        details: { type: 'object', example: {} }
-      }
-    }
+        details: { type: 'object', example: {} },
+      },
+    },
   })
   check() {
     return this.health.check([]);

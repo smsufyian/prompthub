@@ -1,0 +1,15 @@
+# Build and cache
+dist
+node_modules
+.next
+coverage
+
+# Yarn & lockfiles
+.yarn
+.pnp.*
+.yarnrc.yml
+*.lock
+
+# Env and config
+.env*
+*.log

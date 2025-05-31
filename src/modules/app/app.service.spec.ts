@@ -17,7 +17,8 @@ describe('AppService', () => {
   });
 
   it('should return welcome message', () => {
-    expect(service.getHello()).toBe('Welcome to PromptHub - A hub for managing and sharing prompts for AI and automation workflows!');
+    expect(service.getHello()).toBe(
+      'Welcome to PromptHub - A hub for managing and sharing prompts for AI and automation workflows!'
+    );
   });
-
 });

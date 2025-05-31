@@ -1,27 +1,25 @@
-import {Test, TestingModule} from '@nestjs/testing';
-import {INestApplication} from '@nestjs/common';
-import {AppModule} from '@modules/app/app.module';
-import * as request from 'supertest';
+import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
+import { AppModule } from '@modules/app/app.module';
+import request from 'supertest';
 
 describe('Health liveliness check', () => {
-    let app: INestApplication;
+  let app: INestApplication;
 
-    beforeEach(async () => {
-        const moduleFixture: TestingModule = await Test.createTestingModule({
-            imports: [AppModule],
-        }).compile();
+  beforeEach(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
 
-        app = moduleFixture.createNestApplication();
-        await app.init();
-    });
+    app = moduleFixture.createNestApplication();
+    await app.init();
+  });
 
-    afterEach(async () => {
-        await app.close();
-    });
+  afterEach(async () => {
+    await app.close();
+  });
 
-    it('return 200 when application is live', () => {
-        return request(app.getHttpServer())
-            .get('/health/live')
-            .expect(200);
-    });
+  it('return 200 when application is live', () => {
+    return request(app.getHttpServer()).get('/health/live').expect(200);
+  });
 });

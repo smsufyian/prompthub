@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
@@ -7,11 +8,13 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Enable validation
-  app.useGlobalPipes(new ValidationPipe({
-    whitelist: true, // Strip properties that do not have any decorators
-    transform: true, // Transform payloads to be objects typed according to their DTO classes
-    forbidNonWhitelisted: true, // Throw errors if non-whitelisted properties are present
-  }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true, // Strip properties that do not have any decorators
+      transform: true, // Transform payloads to be objects typed according to their DTO classes
+      forbidNonWhitelisted: true, // Throw errors if non-whitelisted properties are present
+    })
+  );
 
   const config = new DocumentBuilder()
     .setTitle('PromptHub API')
